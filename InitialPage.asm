@@ -13,5 +13,54 @@ DESENHA_FUNDO:
     CALL imprimir_retangulo
 RET
 DESENHA_TEXTOS:
+	CALL TEXTO_BEM_VINDO
+	CALL TEXTO_BOTAO_INICIAR
 	
+	JMP VERIFICA_BOTAO_INICIAR	
+RET
+
+TEXTO_BEM_VINDO:
+	;BEM VINDO
+    MOV DH, 5;linha
+    MOV DL, 32;coluna
+    CALL MOVER_CURSOR
+           
+    LEA DX, menu_novo_jogo
+    MOV AH, 09h 
+	
+    ;MUDA COR
+	MOV BL, cor_fonte_branca; cor 
+    MOV CX, 10h ;num caracteres       
+    INT 10h ;muda cor
+	
+    INT 21h
+RET
+TEXTO_BOTAO_INICIAR:
+	;BEM VINDO
+    MOV DH, 9;linha
+    MOV DL, 28;coluna
+    CALL MOVER_CURSOR
+           
+    LEA DX, menu_iniciar_jogo
+    MOV AH, 09h 
+	
+    ;MUDA COR
+	MOV BL, cor_fonte_branca; cor 
+    MOV CX, 18h ;num caracteres       
+    INT 10h ;muda cor
+	
+    INT 21h
+RET
+
+VERIFICA_BOTAO_INICIAR:
+	MOV AH, 08h
+    INT 21h
+    ;AL recebe a tecla    
+	
+    CMP AL, tecla_iniciar_jogo
+    JE INICIA_JOGO
+	JMP VERIFICA_BOTAO_INICIAR
+RET
+
+INICIA_JOGO:
 RET

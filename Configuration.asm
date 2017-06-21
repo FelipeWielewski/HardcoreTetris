@@ -45,8 +45,9 @@ RET
 ;Constantes para Configuracao
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
     parede              EQU 0B2h
-    menu_novo_jogo      DB  "Novo Jogo$"
+    menu_novo_jogo      DB  "HardCore Tetris$"
     menu_sobre          DB  "Sobre$"
+	menu_iniciar_jogo   DB  "Para iniciar pressione H$"
     menu_sair           DB  "Sair$"
     menu_top            EQU 0Ch
     menu_left           EQU 25h
@@ -57,11 +58,12 @@ RET
     tecla_direita       EQU 64h ;d
     tecla_sair          EQU 1Bh ;ESC
     gravidade           EQU 1200
-
+	tecla_iniciar_jogo  EQU 68h; h
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;Cores
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-    cor_fundo_azul      EQU 010h
+    cor_fundo_preto     EQU 000h
+	cor_fundo_azul      EQU 010h
     cor_fundo_verde     EQU 020h
     cor_fonte_branca    EQU 00Fh
     cor_fonte_amarela   EQU 006h
