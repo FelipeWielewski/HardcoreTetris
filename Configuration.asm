@@ -20,6 +20,7 @@ RET
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;Configuracoes e contexto do jogo
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	ptr_player_mov 		EQU 0999h; Indica se a tecla de movimentacao foi pressionada
     ptr_pos_person      EQU 1000h
     ptr_cor_fundo       EQU 1002h
     ptr_cor_parede      EQU 1003h

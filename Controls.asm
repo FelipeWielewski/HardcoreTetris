@@ -1,0 +1,14 @@
+VERIFICA_TECLA_PRESSIONADA:
+	MOV AH, 01h ; checks if a key is pressed
+    INT 16h
+	JZ SETA_PONTEIRO_MOVIMENTO_ZERO
+	CALL SETA_PONTEIRO_MOVIMENTO_UM
+RET
+
+SETA_PONTEIRO_MOVIMENTO_ZERO:
+	MOV [ptr_player_mov], 0h
+RET
+SETA_PONTEIRO_MOVIMENTO_UM:; QUANDO UM -> Significa que há algo em AL pressionado
+	MOV [ptr_player_mov], 1h
+RET
+ 
